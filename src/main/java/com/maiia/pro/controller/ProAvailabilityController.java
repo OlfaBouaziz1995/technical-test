@@ -21,4 +21,10 @@ public class ProAvailabilityController {
     public List<Availability> getAvailabilities(@RequestParam final Integer practitionerId) {
         return proAvailabilityService.findByPractitionerId(practitionerId);
     }
+    
+    @ApiOperation(value = "Generate availibilities")
+    @GetMapping("/generated")
+    public List<Availability> generateAvailabilities(@RequestParam final Integer practitionerId) {
+        return proAvailabilityService.generateAvailabilities(practitionerId);
+    }
 }
