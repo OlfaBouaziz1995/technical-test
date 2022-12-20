@@ -12,7 +12,7 @@ import com.maiia.pro.entity.Appointment;
 
 @Repository
 public interface AppointmentRepository extends CrudRepository<Appointment, String> {
-    List<Appointment> findByPractitionerId(String practitionerId);
+    List<Appointment> findByPractitionerId(Integer practitionerId);
     List<Appointment> findAll();
     
     @Query("select ap from Appointment ap where ap.practitionerId = :practitionerId and ap.startDate >= :startDate and ap.startDate < :endDate ")
